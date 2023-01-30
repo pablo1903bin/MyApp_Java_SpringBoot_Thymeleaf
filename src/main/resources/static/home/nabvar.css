@@ -1,0 +1,145 @@
+:root {
+  --primary: #0669B8;
+  --secundary: #087ECB;
+  --background: #C7E0F0;
+  --black-text: rgb(36, 34, 34);
+  --white-text: #ffffff;
+}
+
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #2C3E50;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #087ECB, #2C3E50);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #C7E0F0, #055FAF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.nav {
+  background-color: var(--primary);
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.nombre {
+  color:#EDEEF5;
+  font-size: 2rem;
+  letter-spacing: 0.5rem;
+}
+
+.links{
+	  text-decoration: none;
+	  color: var(--white-text);
+	  outline: none;
+
+}
+.drop-down-menu {
+  font-size: 1.2rem;
+  outline: none;
+  color: var(--white-text);
+  padding: 10px;
+  background-color: inherit;
+  border-radius: 8px;
+  margin-right: 10px;
+}
+
+.drop-down-button {
+  font-size: 1.2rem;
+  outline: none;
+  color: var(--white-text);
+  padding: 1rem 1rem;
+  background-color: inherit;
+}
+
+.drop-down-menu-content {
+  display: none;
+  position: absolute;
+  background-color: var(--white-text);
+  min-width: 10rem;
+  box-shadow: 0 0.8rem 1rem 0 rgba(0, 0, 00.2);
+  z-index: 1;
+  border-radius: 8px;
+}
+
+.drop-down-menu:hover {
+  background-color: var(--secundary);
+  color: var(--white-text);
+}
+
+.drop-down-menu-content a {
+  text-decoration: none;
+  float: none;
+  color: var(--black-text);
+  padding: 1rem 1rem;
+  display: block;
+}
+
+.drop-down-menu-content a:hover {
+  background-color: var(--background);
+ 
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.drop-down-menu:hover .drop-down-menu-content {
+  display: block;
+}
+
+.nav ul {
+  display: flex;
+}
+
+.drawer {
+  font-size: 1rem;
+  color: var(--white-text);
+  float: left;
+  cursor: pointer;
+  display: none;
+  margin-left: 1rem;
+  border: solid 0.1rem var(--white-text);
+  padding: 0.2rem;
+}
+
+.ckbox {
+  display: none;
+}
+
+/*media query*/
+
+@media (max-width: 800px) {
+  .nav {
+    justify-content: flex-start;
+  }
+
+  .drawer {
+    display: block;
+  }
+
+  .drop-down-menu-content {
+    width: 100%;
+  }
+
+ .nav h1 {
+    margin-left: 1rem;
+  }
+
+  .ul {
+    position: fixed;
+    width: 50%;
+    height: 100vh;
+    background-color: var(--background);
+    top: 10vh;
+    left: -100%;
+    text-align: left;
+    transition: all 0.5s;
+    display: flex;
+    flex-direction: column;
+    align-content: stretch;
+  }
+
+  .ckbox:checked ~ .menu-box {
+    left: 0;
+  }
+}
